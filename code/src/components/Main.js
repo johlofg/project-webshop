@@ -1,4 +1,4 @@
-import React, {useEffect, useState}  from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
@@ -7,27 +7,18 @@ import Cart from './Cart'
 import cart from '../reducer/cart'
 
 const ProductCard = styled.div`
-height: 20vw;
-width: 20vh;
+height: 50vw;
+width: 50vh;
 display: flex;
 align-items: center;
 justify-content: center;
 border: 1px solid #000;
 `
-
-
 const Main = () => {
-  const [data, setData] = useState([])
 
-  const displayedCategory = useSelector(store => store.products.category)
+  const data = useSelector(store => store.products.displayedData)
 
-  const dispatch = useDispatch()
-  
-  useEffect(() => {  
-    fetch(`https://fakestoreapi.com/products/category/${displayedCategory}`)
-    .then(res => res.json())
-    .then(json => setData(json))    
-  }, [displayedCategory])
+  const dispatch = useDispatch() 
   
   return (    
       <div>
