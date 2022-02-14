@@ -4,7 +4,7 @@ const products = createSlice({
   name: "products",
   initialState: {
     category: null,
-    displayedData: [],
+    displayedData: [],        
   },
   reducers: {
     setCategory: (store, action) => {
@@ -12,7 +12,7 @@ const products = createSlice({
     },
     setDisplayedData: (store, action) => {
       store.displayedData = action.payload
-    }
-  }
+    } 
+  }   
 })
 export default products

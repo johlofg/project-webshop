@@ -6,7 +6,6 @@ import products from "./reducer/products"
 import cart from "./reducer/cart"
 
 import Main from "./components/Main"
-import CategoryBtns from './components/CategoryBtns'
 
 const reducer = combineReducers({
   products: products.reducer,
@@ -17,10 +16,11 @@ const store = configureStore({ reducer })
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <CategoryBtns />
+  
+    <Provider store={store}>      
       <Main />
     </Provider>
+  
   )
 }
 export default App

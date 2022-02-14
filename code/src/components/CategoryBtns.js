@@ -3,9 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import products from '../reducer/products'
 
-const CategoryBtns = () => {  
-  
-  const dispatch = useDispatch()
+const CategoryBtns = () => { 
   
   const onHandleJewelery = () => {
     fetch(`https://fakestoreapi.com/products/category/jewelery`)
@@ -14,37 +12,46 @@ const CategoryBtns = () => {
   }
 
   const onHandleMen = () => {
-    fetch(`https://fakestoreapi.com/products/category/men's%20clothing`)
-    .then(res => res.json())
-    .then(json => dispatch(products.actions.setDisplayedData(json)))    
-  }
-  
-  const onHandleWomen = () => {
-    fetch(`https://fakestoreapi.com/products/category/women's%20clothing`)
-    .then(res => res.json())
-    .then(json => dispatch(products.actions.setDisplayedData(json)))    
-  }
-  
-  const onHandleElectronics = () => {
-    fetch(`https://fakestoreapi.com/products/category/electronics`)
-    .then(res => res.json())
-    .then(json => dispatch(products.actions.setDisplayedData(json)))    
-  }
+      fetch(`https://fakestoreapi.com/products/category/men's%20clothing`)
+      .then(res => res.json())
+      .then(json => dispatch(products.actions.setDisplayedData(json)))    
+    }
+    
+    const onHandleWomen = () => {
+      fetch(`https://fakestoreapi.com/products/category/women's%20clothing`)
+      .then(res => res.json())
+      .then(json => dispatch(products.actions.setDisplayedData(json)))    
+    }
+    
+    const onHandleElectronics = () => {
+      fetch(`https://fakestoreapi.com/products/category/electronics`)
+      .then(res => res.json())
+      .then(json => dispatch(products.actions.setDisplayedData(json)))    
+    }
+  const dispatch = useDispatch()
 
-  return (
+  return (  
     <div>
-      <button onClick={onHandleMen}>    
+      <button 
+        type="button"
+        onClick={onHandleMen}>    
         Mens clothing
-      </button>
-      <button onClick={onHandleWomen}>
+      </button>          
+      <button 
+        type="button"
+        onClick={onHandleWomen}>
         Woman´s Clothing
-      </button>
-      <button onClick={onHandleJewelery}>
+      </button>          
+      <button 
+        type="button"
+        onClick={onHandleJewelery}>
         Jewelery
-      </button>
-      <button onClick={onHandleElectronics}>
+      </button>       
+      <button 
+        type="button"
+        onClick={onHandleElectronics}>
         Electronics
-      </button>
+      </button>         
     </div>
   )
 }
