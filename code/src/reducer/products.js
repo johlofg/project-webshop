@@ -2,14 +2,10 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const products = createSlice({
   name: "products",
-  initialState: {
-    category: null,
+  initialState: {    
     displayedData: [],        
   },
   reducers: {
-    setCategory: (store, action) => {
-      store.category = action.payload      
-    },
     setDisplayedData: (store, action) => {
       store.displayedData = action.payload
     } 

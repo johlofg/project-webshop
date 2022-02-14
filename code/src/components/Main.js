@@ -16,15 +16,17 @@ justify-content: center;
 border: 1px solid #000;
 `
 const Main = () => {
-  const data = useSelector(store => store.products.displayedData)
 
+  const data = useSelector(store => store.products.displayedData)
+  const showCart = useSelector(store => store.cart.displayCart)
+  console.log(showCart)
   const dispatch = useDispatch() 
   
   return (    
       <div>
-        <Menu />
-        {data.map(product => (
-          <ProductCard key={product.id}>
+        <Menu />        
+          {data.map(product => (
+            <ProductCard key={product.id}>
             <p>{product.title}</p>
             <p>{product.price}</p>
             {/* <img src={product.image} alt="the product"/> */}
@@ -34,8 +36,8 @@ const Main = () => {
                 Add to cart
               </button>
           </ProductCard>
-        ))} 
-        <Cart />
+          ))}  
+        <Cart />         
       </div>         
   )
 }

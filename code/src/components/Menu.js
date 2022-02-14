@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import CategoryBtns from './CategoryBtns'
 import RightNav from './RightNav'
+
 
 const HamburgerMenu = styled.div`
 width: 2rem;
@@ -38,11 +41,15 @@ div {
 }`
 
 const Menu = () => {
-  const [open, setOpen] = useState(false)
-  console.log(open)
+  const [open, setOpen] = useState(false) 
+  
+  const dispatch = useDispatch()
 
   return (
     <>
+      <Link to='/Cart'>
+      <button type='button'>Cart</button>
+      </Link>
       <HamburgerMenu open={open} onClick={() => setOpen(!open)}>
         <div />
         <div />
