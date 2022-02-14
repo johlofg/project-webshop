@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import CategoryBtns from './CategoryBtns'
@@ -41,9 +40,7 @@ div {
 }`
 
 const Menu = () => {
-  const [open, setOpen] = useState(false) 
-  
-  const dispatch = useDispatch()
+  const [open, setOpen] = useState(false)   
 
   return (
     <>

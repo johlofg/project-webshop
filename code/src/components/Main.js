@@ -18,8 +18,7 @@ border: 1px solid #000;
 const Main = () => {
 
   const data = useSelector(store => store.products.displayedData)
-  const showCart = useSelector(store => store.cart.displayCart)
-  console.log(showCart)
+  
   const dispatch = useDispatch() 
   
   return (    
