@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom'
 import CategoryBtns from './CategoryBtns'
 import RightNav from './RightNav'
 
-
 const HamburgerMenu = styled.div`
 width: 2rem;
 height: 2rem;
 position: fixed;
-bottom: 15px;
+top: 15px;
 right: 20px;
 z-index: 20;
 display: none; 
@@ -46,12 +45,12 @@ const Menu = () => {
     <>
       <Link to='/Cart'>
       <button type='button'>Cart</button>
-      </Link>
-      <HamburgerMenu open={open} onClick={() => setOpen(!open)}>
-        <div />
-        <div />
-        <div />
-      </HamburgerMenu>
+      </Link>      
+        <HamburgerMenu open={open} onClick={() => setOpen(!open)}>
+          <div />
+          <div />
+          <div />
+        </HamburgerMenu>      
       {open && <RightNav open={open} />}
       {!open && <CategoryBtns /> }  
     </>

@@ -54,38 +54,36 @@ const RightNav = ({open}) => {
   const dispatch = useDispatch()
 
   return (  
-    <div>      
-        <Ul open={open}>
-          <li>
-            <button 
-              type="button"
-              onClick={onHandleMen}>    
-              Mens clothing
-            </button>
-          </li>
-          <li>
-            <button 
-              type="button"
-              onClick={onHandleWomen}>
-              Woman´s Clothing
-            </button>
-          </li>        
-          <li>
-            <button 
-              type="button"
-              onClick={onHandleJewelery}>
-              Jewelery
-            </button>
-          </li>
-          <li>
-            <button 
-              type="button"
-              onClick={onHandleElectronics}>
-              Electronics
-            </button>
-          </li>
-        </Ul> 
-    </div>
+    <Ul open={open}>
+      <li>
+        <button 
+          type="button"
+          onClick={onHandleMen}>    
+          Mens clothing
+        </button>
+      </li>
+      <li>
+        <button 
+          type="button"
+          onClick={onHandleWomen}>
+          Woman´s Clothing
+        </button>
+      </li>        
+      <li>
+        <button 
+          type="button"
+          onClick={onHandleJewelery}>
+          Jewelery
+        </button>
+      </li>
+      <li>
+        <button 
+          type="button"
+          onClick={onHandleElectronics}>
+          Electronics
+        </button>
+      </li>           
+    </Ul> 
   )
 }
 export default RightNav

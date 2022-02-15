@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { Button, ButtonGroup, Box } from '@material-ui/core'
 
 import products from '../reducer/products'
 
@@ -31,28 +32,30 @@ const CategoryBtns = () => {
   const dispatch = useDispatch()
 
   return (  
-    <div>
-      <button 
-        type="button"
-        onClick={onHandleMen}>    
-        Mens clothing
-      </button>          
-      <button 
-        type="button"
-        onClick={onHandleWomen}>
-        Woman´s Clothing
-      </button>          
-      <button 
-        type="button"
-        onClick={onHandleJewelery}>
-        Jewelery
-      </button>       
-      <button 
-        type="button"
-        onClick={onHandleElectronics}>
-        Electronics
-      </button>         
-    </div>
+    <Box component='div' sx={{ display:{ xs:'none', sm:'none', md:'block', lg:'block' } }}>
+      <ButtonGroup variant='contained' aria-label='outlined category buttons' >
+        <Button 
+          type="button"
+          onClick={onHandleMen}>    
+          Mens clothing
+        </Button>          
+        <Button 
+          type="button"
+          onClick={onHandleWomen}>
+          Woman´s Clothing
+        </Button>          
+        <Button 
+          type="button"
+          onClick={onHandleJewelery}>
+          Jewelery
+        </Button>       
+        <Button 
+          type="button"
+          onClick={onHandleElectronics}>
+          Electronics
+        </Button>         
+      </ButtonGroup>
+    </Box>
   )
 }
 export default CategoryBtns
