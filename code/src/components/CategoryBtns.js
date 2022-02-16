@@ -34,8 +34,8 @@ const CategoryBtns = () => {
   const dispatch = useDispatch()
 
   return (  
-    <Box component='div' sx={{ display:{ xs:'none', sm:'none', md:'block', lg:'block', xl:'block' } }}>
-      <ButtonGroup  variant='contained' aria-label='outlined category buttons' color='primary' > 
+    <Box component='div' sx={{ display:{ xs:'none', sm:'block', md:'block', lg:'block', xl:'block' } }}>
+      <ButtonGroup fullWidth variant='contained' aria-label='outlined category buttons' color='primary' > 
             <Button              
               onClick={onHandleMen}>    
               Mens clothing

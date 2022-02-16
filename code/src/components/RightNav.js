@@ -16,14 +16,13 @@ list-style: none;
     margin-top: 40px; 
   }  
 
-  @media (max-width: 959px) {
+  @media (max-width: 599px); {
     display: flex;
     flex-flow: column nowrap;
     text-align: left;
     background-color: #3f51b5;
     position: fixed;
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')}
-    transition-duration: 5s;    
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')}       
     top: 0;
     right: 0; 
     height: 100vh;
