@@ -32,8 +32,8 @@ const CategoryBtns = () => {
   const dispatch = useDispatch()
 
   return (  
-    <Box component='div' sx={{ display:{ xs:'none', sm:'none', md:'block', lg:'block' } }}>
-      <ButtonGroup variant='contained' aria-label='outlined category buttons' >
+    <Box component='div' sx={{ display:{ xs:'none', sm:'none', md:'block', lg:'block', xl:'block' } }}>
+      <ButtonGroup variant='contained' aria-label='outlined category buttons' color='secondary'>
         <Button 
           type="button"
           onClick={onHandleMen}>    

@@ -1,23 +1,33 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { Button, } from '@material-ui/core'
+import Stack from '@mui/material/Stack'
+import { Link } from 'react-router-dom'
 
 import products from '../reducer/products'
 
-const Ul = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-flow: row nowrap;  
-  
+const BtnContainer = styled.ul`
+display: none;  
+list-style: none;
+
   li {
-    padding: 18px 10px;
+    padding: 40px 0px;
+    margin-top: 40px;
   } 
-  
+
+  a {
+    text-decoration: none;
+  }
+
   @media (max-width: 768px) {
+    display: flex;
     flex-flow: column nowrap;
-    background-color: #008060;
+    text-align: left;
+    background-color: #3f51b5;
     position: fixed;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')}
+    transition-duration: 5s;    
     top: 0;
     right: 0; 
     height: 100vh;
@@ -53,37 +63,43 @@ const RightNav = ({open}) => {
     }
   const dispatch = useDispatch()
 
-  return (  
-    <Ul open={open}>
-      <li>
-        <button 
-          type="button"
-          onClick={onHandleMen}>    
-          Mens clothing
-        </button>
-      </li>
-      <li>
-        <button 
-          type="button"
-          onClick={onHandleWomen}>
-          Woman´s Clothing
-        </button>
-      </li>        
-      <li>
-        <button 
-          type="button"
-          onClick={onHandleJewelery}>
-          Jewelery
-        </button>
-      </li>
-      <li>
-        <button 
-          type="button"
-          onClick={onHandleElectronics}>
-          Electronics
-        </button>
-      </li>           
-    </Ul> 
-  )
+  return ( 
+    <Stack direction='column' spacing={1}> 
+      <BtnContainer open={open}>
+        <Link to='/'>
+          <li>
+            <Button                        
+              onClick={onHandleMen}>    
+              Mens clothing
+            </Button> 
+          </li>
+        </Link>
+        <Link to='/'>
+          <li>
+            <Button
+              onClick={onHandleWomen}>
+              Womans Clothing
+            </Button>
+          </li>
+        </Link>
+        <Link to='/'>
+          <li>
+            <Button 
+              onClick={onHandleJewelery}>
+              Jewelery
+            </Button>        
+          </li>
+        </Link>
+        <Link to='/'>
+          <li>
+            <Button
+              onClick={onHandleElectronics}>
+              Electronics
+            </Button>                  
+          </li>
+        </Link>
+      </BtnContainer>
+    </Stack>
+  ) 
 }
 export default RightNav
