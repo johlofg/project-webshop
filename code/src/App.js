@@ -2,6 +2,7 @@ import React from "react"
 import { Provider } from "react-redux"
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import products from "./reducer/products"
 import cart from "./reducer/cart"
 
