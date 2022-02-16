@@ -38,11 +38,11 @@ const ProductPage = () => {
                   alt='product'
                   />                    
                 <CardContent className={classes.cardContent}>
-                  <Typography variant="p" gutterBottom>{product.title}</Typography>
-                  <Typography variant="p" gutterBottom>{product.price} £</Typography>
+                  <Typography variant="body1" gutterBottom>{product.title}</Typography>
+                  <Typography variant="body1" gutterBottom>{product.price} £</Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size='small' color='primary' onClick={() => { dispatch(cart.actions.addItemToCart(product)) }}>
+                  <Button size='medium' color='primary' onClick={() => { dispatch(cart.actions.addItemToCart(product)) }}>
                     Add to cart
                   </Button>
                 </CardActions>

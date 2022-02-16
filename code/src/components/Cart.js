@@ -6,7 +6,6 @@ import Fab from '@mui/material/Fab';
 
 import cart from '../reducer/cart'
 import useStyles from '../styles'
-import Hambuger from './Hambuger'
 import HomeBtn from './HomeBtn'
 
 
@@ -25,8 +24,7 @@ const Cart = () => {
     <>
     <AppBar>
       <Toolbar>
-        <HomeBtn />
-        <Hambuger />          
+        <HomeBtn />                 
       </Toolbar>
     </AppBar>
       <Container className={classes.cartList} maxWidth='sm'>

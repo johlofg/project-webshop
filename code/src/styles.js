@@ -35,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
   },
   totalPrice: {
     marginTop: '5px'
+  },
+  buttonGroup: {
+    textDecoration: 'none'
   }
 }))
 

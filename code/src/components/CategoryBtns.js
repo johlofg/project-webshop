@@ -1,11 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Button, ButtonGroup, Box } from '@material-ui/core'
-import { Link } from 'react-router-dom'
 
 import products from '../reducer/products'
 
-const CategoryBtns = () => { 
+
+
+const CategoryBtns = () => {  
   
   const onHandleJewelery = () => {
     fetch(`https://fakestoreapi.com/products/category/jewelery`)
@@ -34,35 +35,23 @@ const CategoryBtns = () => {
 
   return (  
     <Box component='div' sx={{ display:{ xs:'none', sm:'none', md:'block', lg:'block', xl:'block' } }}>
-      <ButtonGroup variant='contained' aria-label='outlined category buttons' color='secondary'>
-        <Link to='/products'>  
-          <Button 
-            type="button"
-            onClick={onHandleMen}>    
-            Mens clothing
-          </Button>
-        </Link>
-        <Link to='/products'>          
-          <Button 
-            type="button"
-            onClick={onHandleWomen}>
-            Woman´s Clothing
-          </Button> 
-          </Link>
-        <Link to='/products'>         
-          <Button 
-            type="button"
-            onClick={onHandleJewelery}>
-            Jewelery
-          </Button>
-          </Link> 
-        <Link to='/products'>      
-          <Button 
-            type="button"
-            onClick={onHandleElectronics}>
-            Electronics
-          </Button> 
-          </Link>        
+      <ButtonGroup  variant='contained' aria-label='outlined category buttons' color='primary' > 
+            <Button              
+              onClick={onHandleMen}>    
+              Mens clothing
+            </Button>
+            <Button              
+              onClick={onHandleWomen}>
+              Womans Clothing
+            </Button> 
+            <Button              
+              onClick={onHandleJewelery}>
+              Jewelery
+            </Button>                 
+            <Button              
+              onClick={onHandleElectronics}>
+              Electronics
+            </Button>               
       </ButtonGroup>
     </Box>
   )

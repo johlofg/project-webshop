@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { Button, } from '@material-ui/core'
 import Stack from '@mui/material/Stack'
-import { Link } from 'react-router-dom'
+import Divider from '@mui/material/Divider'
 
 import products from '../reducer/products'
 
@@ -13,14 +13,10 @@ list-style: none;
 
   li {
     padding: 40px 0px;
-    margin-top: 40px;
-  } 
+    margin-top: 40px; 
+  }  
 
-  a {
-    text-decoration: none;
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 959px) {
     display: flex;
     flex-flow: column nowrap;
     text-align: left;
@@ -64,41 +60,36 @@ const RightNav = ({open}) => {
   const dispatch = useDispatch()
 
   return ( 
-    <Stack direction='column' spacing={1}> 
-      <BtnContainer open={open}>
-        <Link to='/products'>
+    <Stack direction='column' divider={<Divider oriention='horizontal' flexItem />} spacing={1}> 
+      <BtnContainer open={open}>        
           <li>
             <Button                        
               onClick={onHandleMen}>    
               Mens clothing
             </Button> 
           </li>
-        </Link>
-        <Link to='/products'>
+        
           <li>
             <Button
               onClick={onHandleWomen}>
               Womans Clothing
             </Button>
           </li>
-        </Link>
-        <Link to='/products'>
+        
           <li>
             <Button 
               onClick={onHandleJewelery}>
               Jewelery
             </Button>        
           </li>
-        </Link>
-        <Link to='/products'>
+        
           <li>
             <Button
               onClick={onHandleElectronics}>
               Electronics
             </Button>                  
           </li>
-        </Link>
-      </BtnContainer>
+        </BtnContainer>
     </Stack>
   ) 
 }

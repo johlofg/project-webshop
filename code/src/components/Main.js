@@ -1,12 +1,17 @@
-import React from 'react'
-import { Typography, CssBaseline,  Container, AppBar, Toolbar } from '@material-ui/core'
+import React  from 'react'
+import { useSelector } from 'react-redux'
+import { CssBaseline,  Container, AppBar, Toolbar } from '@material-ui/core'
 
-import Menu from './Menu'
 import useStyles from '../styles'
 
+import Menu from './Menu'
+import ProductPage from './ProductPage'
+import WelcomePage from './WelcomePage'
+
 const Main = () => {
+  const displayWelcome  = useSelector(store => store.products.displayedData)
   
-  const classes = useStyles()
+  const classes = useStyles()  
 
   return (    
     <>
@@ -16,10 +21,10 @@ const Main = () => {
           <Menu />
         </Toolbar>
       </AppBar>
-      <Container className={classes.mainContainer} maxWidth='md'>
-        <Typography variant='h2' align='center' color='textPrimary' gutterBottom>
-          WebShop
-        </Typography>        
+      <Container className={classes.mainContainer} maxWidth='md'>  
+      {!displayWelcome && <WelcomePage />}
+      {displayWelcome && <ProductPage />}  
+      {console.log(displayWelcome)}            
       </Container>       
     </>         
   )
