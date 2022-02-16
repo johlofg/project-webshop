@@ -16,18 +16,22 @@ const useStyles = makeStyles((theme) => ({
   mainContainer: {
     marginTop: '100px'
   },
+  cartGrid: {     
+    width: '100%'    
+  },
   cartCard: {
     display: 'flex',
-    flexDirection: 'row',
-    height: '100%'
+    flexDirection: 'row',    
+    height: '100%',
+    justifyContent: 'space-between'
+
   },
   cartList: {
-    marginTop: '100px',
-    
+    marginTop: '100px',        
   },
   cartCardMedia: {
     height: 80,
-    width: '33%'
+    width: 60
   },
   totalPrice: {
     marginTop: '5px'

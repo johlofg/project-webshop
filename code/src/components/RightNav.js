@@ -66,7 +66,7 @@ const RightNav = ({open}) => {
   return ( 
     <Stack direction='column' spacing={1}> 
       <BtnContainer open={open}>
-        <Link to='/'>
+        <Link to='/products'>
           <li>
             <Button                        
               onClick={onHandleMen}>    
@@ -74,7 +74,7 @@ const RightNav = ({open}) => {
             </Button> 
           </li>
         </Link>
-        <Link to='/'>
+        <Link to='/products'>
           <li>
             <Button
               onClick={onHandleWomen}>
@@ -82,7 +82,7 @@ const RightNav = ({open}) => {
             </Button>
           </li>
         </Link>
-        <Link to='/'>
+        <Link to='/products'>
           <li>
             <Button 
               onClick={onHandleJewelery}>
@@ -90,7 +90,7 @@ const RightNav = ({open}) => {
             </Button>        
           </li>
         </Link>
-        <Link to='/'>
+        <Link to='/products'>
           <li>
             <Button
               onClick={onHandleElectronics}>

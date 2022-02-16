@@ -7,6 +7,7 @@ import cart from "./reducer/cart"
 
 import Main from "./components/Main"
 import Cart from "./components/Cart"
+import ProductPage from "./components/ProductPage"
 
 const reducer = combineReducers({
   products: products.reducer,
@@ -23,6 +24,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/products' element={<ProductPage />} />
         </Routes>      
       </Provider>
     </BrowserRouter>
