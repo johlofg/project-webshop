@@ -2,54 +2,42 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Button, ButtonGroup, Box } from '@material-ui/core'
 
-import products from '../reducer/products'
+import { onHandleJewelery, onHandleElectronics, onHandleMen, onHandleWomen } from '../reducer/products'
 
+const CategoryBtns = () => { 
 
-
-const CategoryBtns = () => {  
-  
-  const onHandleJewelery = () => {
-    fetch(`https://fakestoreapi.com/products/category/jewelery`)
-    .then(res => res.json())
-    .then(json => dispatch(products.actions.setDisplayedData(json)))    
+  const onJewelery = () => {
+    dispatch(onHandleJewelery())
   }
-
-  const onHandleMen = () => {
-      fetch(`https://fakestoreapi.com/products/category/men's%20clothing`)
-      .then(res => res.json())
-      .then(json => dispatch(products.actions.setDisplayedData(json)))    
-    }
-    
-    const onHandleWomen = () => {
-      fetch(`https://fakestoreapi.com/products/category/women's%20clothing`)
-      .then(res => res.json())
-      .then(json => dispatch(products.actions.setDisplayedData(json)))    
-    }
-    
-    const onHandleElectronics = () => {
-      fetch(`https://fakestoreapi.com/products/category/electronics`)
-      .then(res => res.json())
-      .then(json => dispatch(products.actions.setDisplayedData(json)))    
-    }
+  const onElectronics = () => {
+    dispatch(onHandleElectronics())
+  }
+  const onMen = () => {
+    dispatch(onHandleMen())
+  }
+  const onWomen = () => {
+    dispatch(onHandleWomen())
+  }
+ 
   const dispatch = useDispatch()
 
   return (  
     <Box component='div' sx={{ display:{ xs:'none', sm:'block', md:'block', lg:'block', xl:'block' } }}>
       <ButtonGroup fullWidth variant='contained' aria-label='outlined category buttons' color='primary' > 
             <Button              
-              onClick={onHandleMen}>    
+              onClick={onMen}>    
               Mens clothing
             </Button>
             <Button              
-              onClick={onHandleWomen}>
+              onClick={onWomen}>
               Womans Clothing
             </Button> 
             <Button              
-              onClick={onHandleJewelery}>
+              onClick={onJewelery}>
               Jewelery
             </Button>                 
             <Button              
-              onClick={onHandleElectronics}>
+              onClick={onElectronics}>
               Electronics
             </Button>               
       </ButtonGroup>

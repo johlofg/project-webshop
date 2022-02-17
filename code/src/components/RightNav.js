@@ -1,11 +1,11 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
 import { Button, } from '@material-ui/core'
 import Stack from '@mui/material/Stack'
 import Divider from '@mui/material/Divider'
 
-import products from '../reducer/products'
+import { onHandleJewelery, onHandleElectronics, onHandleMen, onHandleWomen } from '../reducer/products'
 
 const BtnContainer = styled.ul`
 display: none;  
@@ -33,58 +33,47 @@ list-style: none;
 
 const RightNav = ({open}) => { 
   
-  const onHandleJewelery = () => {
-    fetch(`https://fakestoreapi.com/products/category/jewelery`)
-    .then(res => res.json())
-    .then(json => dispatch(products.actions.setDisplayedData(json)))    
-  }
+      const onJewelery = () => {
+        dispatch(onHandleJewelery())
+      }
+      const onElectronics = () => {
+        dispatch(onHandleElectronics())
+      }
+      const onMen = () => {
+        dispatch(onHandleMen())
+      }
+      const onWomen = () => {
+        dispatch(onHandleWomen())
+      }        
+        const dispatch = useDispatch()
 
-  const onHandleMen = () => {
-      fetch(`https://fakestoreapi.com/products/category/men's%20clothing`)
-      .then(res => res.json())
-      .then(json => dispatch(products.actions.setDisplayedData(json)))    
-    }
-    
-    const onHandleWomen = () => {
-      fetch(`https://fakestoreapi.com/products/category/women's%20clothing`)
-      .then(res => res.json())
-      .then(json => dispatch(products.actions.setDisplayedData(json)))    
-    }
-    
-    const onHandleElectronics = () => {
-      fetch(`https://fakestoreapi.com/products/category/electronics`)
-      .then(res => res.json())
-      .then(json => dispatch(products.actions.setDisplayedData(json)))    
-    }
-  const dispatch = useDispatch()
-
-  return ( 
-    <Stack direction='column' divider={<Divider oriention='horizontal' flexItem />} spacing={1}> 
+      return ( 
+        <Stack direction='column' divider={<Divider oriention='horizontal' flexItem />} spacing={1}> 
       <BtnContainer open={open}>        
           <li>
             <Button                        
-              onClick={onHandleMen}>    
+              onClick={onMen}>    
               Mens clothing
             </Button> 
           </li>
         
           <li>
             <Button
-              onClick={onHandleWomen}>
+              onClick={onWomen}>
               Womans Clothing
             </Button>
           </li>
         
           <li>
             <Button 
-              onClick={onHandleJewelery}>
+              onClick={onJewelery}>
               Jewelery
             </Button>        
           </li>
         
           <li>
             <Button
-              onClick={onHandleElectronics}>
+              onClick={onElectronics}>
               Electronics
             </Button>                  
           </li>

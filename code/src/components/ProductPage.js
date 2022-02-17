@@ -4,13 +4,14 @@ import { Typography, Button, Card, CardActions, CardContent, CardMedia, CssBasel
 
 import HomeBtn from './HomeBtn'
 import Menu from './Menu'
+import Loading from './Loading'
 
 import useStyles from '../styles'
 
 import cart from '../reducer/cart'
 
 const ProductPage = () => {
-
+  const loading = useSelector(store => store.products.loading)
   const data = useSelector(store => store.products.displayedData)
   
   const dispatch = useDispatch() 
@@ -27,7 +28,10 @@ const ProductPage = () => {
           </Toolbar>
       </AppBar>
       <Container className={classes.cardContainer} maxWidth='md'>
-        <Grid container spacing={4}>
+        {loading && <Loading />}
+        {!loading && (
+
+          <Grid container spacing={4}>
           {data.map(product => (
             <Grid item key={product.id} xs={12} sm={6} md={4}>
               <Card className={classes.card}>                   
@@ -50,6 +54,7 @@ const ProductPage = () => {
             </Grid>
           ))}                 
         </Grid>
+      )}
       </Container> 
     </Container>
     

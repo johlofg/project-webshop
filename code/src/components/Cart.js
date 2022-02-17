@@ -28,7 +28,7 @@ const Cart = () => {
       </Toolbar>
     </AppBar>
       <Container className={classes.cartList} maxWidth='sm'>
-        <Grid container spacing={2}>
+        <Grid container spacing={4}>
           {products.map((product) => (
             <Grid className={classes.cartGrid} item key={product.id}>
               <Card className={classes.cartCard}>
@@ -41,6 +41,7 @@ const Cart = () => {
                 <CardContent>
                   <Typography variant='h6' paragraph>{product.title}</Typography>
                   <Typography variant='subtitle2' paragraph>Quantity: {product.quantity}</Typography>
+                  <Typography variant='subtitle2' paragraph>Price: {product.price} £</Typography>
                 </CardContent>
                 <CardActions>
                   <Fab size='small' onClick={() => dispatch(cart.actions.removeItemFromCart(product))}>

@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonGroup: {
     textDecoration: 'none'
-  }
+  } 
 }))
 
 export default useStyles
