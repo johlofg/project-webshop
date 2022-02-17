@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',    
     height: '100%',
     justifyContent: 'space-between'
-
   },
   cartList: {
     marginTop: '100px',        

@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 const products = createSlice({
-  name: "products",
+  name: 'products',
   initialState: {    
     displayedData: null, 
     loading: false       

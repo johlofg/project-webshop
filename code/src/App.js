@@ -1,14 +1,14 @@
-import React from "react"
-import { Provider } from "react-redux"
-import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import React from 'react'
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import products from "./reducer/products"
-import cart from "./reducer/cart"
+import products from './reducer/products'
+import cart from './reducer/cart'
 
-import Main from "./components/Main"
-import Cart from "./components/Cart"
-import ProductPage from "./components/ProductPage"
+import Main from './components/Main'
+import Cart from './components/Cart'
+import ProductPage from './components/ProductPage'
 
 const reducer = combineReducers({
   products: products.reducer,

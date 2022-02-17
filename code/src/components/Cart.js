@@ -22,12 +22,12 @@ const Cart = () => {
 
   return (
     <>
-    <AppBar>
-      <Toolbar>
-        <HomeBtn />                 
-      </Toolbar>
-    </AppBar>
-      <Container className={classes.cartList} maxWidth='sm'>
+      <AppBar>
+        <Toolbar>
+          <HomeBtn />                 
+        </Toolbar>
+      </AppBar>
+      <Container className={classes.cartList} maxWidth='sm'>        
         <Grid container spacing={4}>
           {products.map((product) => (
             <Grid className={classes.cartGrid} item key={product.id}>

@@ -5,8 +5,6 @@ import Menu from './Menu'
 
 const WelcomePage = () => {
 
-  
-
   return (    
     <>
       <CssBaseline />

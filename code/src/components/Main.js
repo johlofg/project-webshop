@@ -21,9 +21,8 @@ const Main = () => {
         </Toolbar>
       </AppBar>      
       <Container className={classes.mainContainer} maxWidth='md'>        
-      {!displayWelcome && <WelcomePage />} 
-      {displayWelcome && <ProductPage />}     
-
+        {!displayWelcome && <WelcomePage />} 
+        {displayWelcome && <ProductPage />} 
       </Container> 
     </>         
   )

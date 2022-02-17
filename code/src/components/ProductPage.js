@@ -30,7 +30,6 @@ const ProductPage = () => {
       <Container className={classes.cardContainer} maxWidth='md'>
         {loading && <Loading />}
         {!loading && (
-
           <Grid container spacing={4}>
           {data.map(product => (
             <Grid item key={product.id} xs={12} sm={6} md={4}>
@@ -42,8 +41,8 @@ const ProductPage = () => {
                   alt='product'
                   />                    
                 <CardContent className={classes.cardContent}>
-                  <Typography variant="body1" gutterBottom>{product.title}</Typography>
-                  <Typography variant="body1" gutterBottom>{product.price} £</Typography>
+                  <Typography variant='body1' gutterBottom>{product.title}</Typography>
+                  <Typography variant='body1' gutterBottom>{product.price} £</Typography>
                 </CardContent>
                 <CardActions>
                   <Button size='medium' color='primary' onClick={() => { dispatch(cart.actions.addItemToCart(product)) }}>
@@ -56,8 +55,7 @@ const ProductPage = () => {
         </Grid>
       )}
       </Container> 
-    </Container>
-    
+    </Container>    
   )
 }
 

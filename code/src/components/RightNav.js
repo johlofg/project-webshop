@@ -47,30 +47,27 @@ const RightNav = ({open}) => {
       }        
         const dispatch = useDispatch()
 
-      return ( 
-        <Stack direction='column' divider={<Divider oriention='horizontal' flexItem />} spacing={1}> 
-      <BtnContainer open={open}>        
+    return ( 
+      <Stack direction='column' divider={<Divider oriention='horizontal' flexItem />} spacing={1}> 
+        <BtnContainer open={open}>        
           <li>
             <Button                        
               onClick={onMen}>    
               Mens clothing
             </Button> 
-          </li>
-        
+          </li>    
           <li>
             <Button
               onClick={onWomen}>
               Womans Clothing
             </Button>
-          </li>
-        
+          </li>    
           <li>
             <Button 
               onClick={onJewelery}>
               Jewelery
             </Button>        
-          </li>
-        
+          </li>    
           <li>
             <Button
               onClick={onElectronics}>
@@ -78,7 +75,7 @@ const RightNav = ({open}) => {
             </Button>                  
           </li>
         </BtnContainer>
-    </Stack>
+      </Stack>
   ) 
 }
 export default RightNav

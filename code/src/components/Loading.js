@@ -16,7 +16,7 @@ const Loading = () => {
   }, [])
 
   return (
-  <div className="lottieContainer" ref={lottieContainer}/>
+  <div className='lottieContaine' ref={lottieContainer}/>
   )
 }
 

@@ -11,10 +11,10 @@ const HomeBtn = () => {
 
   return (
     <Link to='/'>
-    <Button onClick={() => { dispatch(products.actions.setDisplayedData(null))}}>
-      <HomeRoundedIcon />
-    </Button>
-  </Link>
+      <Button onClick={() => { dispatch(products.actions.setDisplayedData(null))}}>
+        <HomeRoundedIcon />
+      </Button>
+    </Link>
   )
 }
 
